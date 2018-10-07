@@ -6,3 +6,5 @@
  - Redux sample action, reducer, dispatch
  - Router
  - Eslint Airbnb
+ - Sass
+ - HOC
