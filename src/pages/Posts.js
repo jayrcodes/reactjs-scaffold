@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { compose } from 'recompose';
 import { fetchPosts } from '../store/actions/post';
+// import Header from '../components/Header';
+import hasContentWrapper from '../hoc/hasContentWrapper';
 
 const mapStateToProps = state => ({
   posts: state.post.posts,
@@ -28,7 +31,6 @@ class Posts extends Component {
 
     return (
       <div>
-        <h1>Posts</h1>
         { this.props.isLoading ? <p>loading...</p> : null }
         {mappedPosts}
       </div>
@@ -36,7 +38,14 @@ class Posts extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Posts);
+const enhance = compose(
+  hasContentWrapper({
+    title: 'Posts',
+  }),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  ),
+);
+
+export default enhance(Posts);

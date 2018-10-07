@@ -14,6 +14,8 @@ module.exports = {
     "react/jsx-filename-extension": 0,
     "react/destructuring-assignment": 0,
     "no-restricted-globals": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "no-script-url": 0
   },
   "parser": "babel-eslint",
   "extends": "airbnb"

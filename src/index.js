@@ -6,6 +6,7 @@ import Router from './routes';
 import registerServiceWorker from './registerServiceWorker';
 import { store, persistor } from './store';
 import 'normalize.css/normalize.css';
+import './assets/styles/base.sass';
 
 ReactDOM.render(
   <Provider store={store}>
